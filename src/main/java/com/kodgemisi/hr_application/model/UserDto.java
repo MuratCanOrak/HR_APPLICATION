@@ -3,8 +3,6 @@ package com.kodgemisi.hr_application.model;
 import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 
 @Setter
 @Getter
@@ -14,17 +12,31 @@ import javax.validation.constraints.NotNull;
 public class UserDto {
 
     @NotEmpty
-    private String isim;
+    private String name;
     @NotEmpty
-    private String soyisim;
-    @NotNull
-    private Integer yas;
-    @NotNull
+    private String surname;
+    @NotEmpty
+    private String userName;
+    @NotEmpty
+    private String birthDay;
+    @NotEmpty
+    private String birthPlace;
+    @NotEmpty
+    private String reference;
+    @NotEmpty
+    private String habits;
+    @NotEmpty
+    private String gender;
+    @NotEmpty
+    private String foreignLanguage;
+    @NotEmpty
+    private String soldiering;
+    @NotEmpty
+    private String education;
+    @NotEmpty
+    private String lastJobs;
+    @NotEmpty
     private String email;
-
-    // @DateTimeFormat(pattern = "yyyy-MM-dd")
-    // private LocalDate birthday;
-
 
 }
 

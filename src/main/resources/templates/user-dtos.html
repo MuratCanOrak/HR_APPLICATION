@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>HR APPLİCATİON LİSTELEME</title>
+
+
+
+
+
+</head>
+<body>
+
+Hi
+<div >
+    <table>
+        <tr th:each="user: ${userDtos}" th:object="${user}">
+            <td th:text="*{name}"> </td>
+            <td th:text="*{surname}"> </td>
+            <td th:text="*{userName}"> </td>
+            <td th:text="*{birthDay}"> </td>
+            <td th:text="*{birthPlace}"> </td>
+            <td th:text="*{reference}"> </td>
+            <td th:text="*{habits}"> </td>
+            <td th:text="*{gender}"> </td>
+            <td th:text="*{foreignLanguage}"> </td>
+            <td th:text="*{soldiering}"> </td>
+            <td th:text="*{education}"> </td>
+            <td th:text="*{lastJobs}"> </td>
+            <td th:text="*{email}"> </td>
+
+
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -40,4 +40,16 @@ public class UserController {
         model.addAttribute("userDto", new UserDto());
         return "user";
     }
+
+    @RequestMapping("/listeleme")
+    public String listeleme (Model model){
+
+        final Collection<UserDto> userDtos = userService.getAllUSers();
+
+        model.addAttribute("userDto", new UserDto());
+        model.addAttribute("userDtos", userDtos);
+
+        return "user-dtos";
+    }
+
 }
