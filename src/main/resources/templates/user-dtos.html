@@ -5,49 +5,27 @@
     <title>HR APPLİCATİON LİSTELEME</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
-
 </head>
 <body>
-
 
 <div >
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">name</th>
-            <th scope="col">surname</th>
-            <th scope="col">userName</th>
-            <th scope="col">birthDay</th>
-            <th scope="col">birthPlace</th>
-            <th scope="col">reference</th>
-            <th scope="col">habits</th>
-            <th scope="col">gender</th>
-            <th scope="col">foreignLanguage</th>
-            <th scope="col">soldiering</th>
-            <th scope="col">education</th>
-            <th scope="col">soldiering</th>
-            <th scope="col">lastJobs</th>
-            <th scope="col">email</th>
+            <th scope="col">Ad</th>
+            <th scope="col">E mail</th>
+            <th scope="col">Adres</th>
+            <th scope="col">Telefon Numarası</th>
+            <th scope="col">İş ile ilgili düşünceler</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="user: ${userDto}" th:object="${user}"> <br>
             <td th:text="*{name}"> </td>
-            <td th:text="*{surname}"> </td>
-            <td th:text="*{userName}"> </td>
-            <td th:text="*{birthDay}"> </td>
-            <td th:text="*{birthPlace}"> </td>
-            <td th:text="*{reference}"> </td>
-            <td th:text="*{habits}"> </td>
-            <td th:text="*{gender}"> </td>
-            <td th:text="*{foreignLanguage}"> </td>
-            <td th:text="*{soldiering}"> </td>
-            <td th:text="*{education}"> </td>
-            <td th:text="*{lastJobs}"> </td>
             <td th:text="*{email}"> </td>
-
-
+            <td th:text="*{adress}"> </td>
+            <td th:text="*{phoneNumber}"> </td>
+            <td th:text="*{thoughtsOnJob}"> </td>
         </tr>
         </tbody>
     </table>

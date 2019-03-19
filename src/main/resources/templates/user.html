@@ -12,73 +12,36 @@
 </head>
 <body>
 
+<h3 align="center"> BAŞVURU SAYFASI  </h3>
+
 <div class="container">
 <form th:action="@{/users/create}" th:object="${userDto}" method="post">
     <div class="form-group">
-        <label>Adı</label>
+        <label>Ad:</label>
         <input type="text" th:field="*{name}" class="form-control">
     </div>
 
-    <div class="form-group">
-        <label>Soyadı</label>
-        <input type="text" th:field="*{surname}" class="form-control">
-    </div>
 
     <div class="form-group">
-        <label >Kullanıcı Adı</label>
-        <input type="text" th:field="*{userName}" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label>E mail</label>
+        <label>E mail:</label>
         <input type="text" th:field="*{email}" class="form-control">
     </div>
 
+
     <div class="form-group">
-        <label >Doğum Tarihi</label>
-        <td><input type="datetime-local" th:field="*{birthDay}"  class="form-control"/>
+        <label >Adres: </label>
+        <td><input type="text" th:field="*{adress}"  class="form-control"/>
     </div>
 
 
     <div class="form-group">
-        <label >Doğum Yeri</label>
-        <td><input type="text" th:field="*{birthPlace}"  class="form-control"/>
-    </div>
-
-
-    <div class="form-group">
-        <label >Cinsiyet</label>
-        <td><input type="text" th:field="*{gender}"  class="form-control"/>
+        <label >Telefon Numarası: </label>
+        <td><input type="text" th:field="*{phoneNumber}"  class="form-control"/>
     </div>
 
     <div class="form-group">
-        <label>Referans</label>
-        <td><input type="text" th:field="*{reference}" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Alışkanlıklar</label>
-        <td><input type="text" th:field="*{habits}" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Yabancı Dil</label>
-        <td><input type="text" th:field="*{foreignLanguage}" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Askerlik</label>
-        <td><input type="text" th:field="*{soldiering}" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Eğitim</label>
-        <td><input type="text" th:field="*{education}" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Geçmiş işler</label>
-        <td><input type="text" th:field="*{lastJobs}" class="form-control" />
+        <label >İş ile ilgili düşünceler: </label>
+        <td><input type="text" th:field="*{thoughtsOnJob}"  class="form-control"/>
     </div>
 
 
