@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.Collection;
 
 @Controller
@@ -33,12 +32,13 @@ public class UserController {
         return "user";
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public String create(@ModelAttribute @Validated UserDto userDto, Model model){
 
         userService.create(userDto);
-        model.addAttribute("userDto", new UserDto());
-        return "user";
+        final Collection<UserDto> userDtos = userService.getAllUSers();
+        model.addAttribute("userDto",userDtos);
+        return "user-dtos";
     }
 
     @RequestMapping("/listeleme")

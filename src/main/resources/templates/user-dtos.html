@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>HR APPLİCATİON LİSTELEME</title>
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
 
 </head>
 <body>
 
-Hi
+
 <div >
-    <table>
-        <tr th:each="user: ${userDtos}" th:object="${user}">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">surname</th>
+            <th scope="col">userName</th>
+            <th scope="col">birthDay</th>
+            <th scope="col">birthPlace</th>
+            <th scope="col">reference</th>
+            <th scope="col">habits</th>
+            <th scope="col">gender</th>
+            <th scope="col">foreignLanguage</th>
+            <th scope="col">soldiering</th>
+            <th scope="col">education</th>
+            <th scope="col">soldiering</th>
+            <th scope="col">lastJobs</th>
+            <th scope="col">email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user: ${userDto}" th:object="${user}"> <br>
             <td th:text="*{name}"> </td>
             <td th:text="*{surname}"> </td>
             <td th:text="*{userName}"> </td>
@@ -31,10 +49,18 @@ Hi
 
 
         </tr>
-
+        </tbody>
     </table>
 
 </div>
+
+
+<!--  <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js" integrity=""               -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>

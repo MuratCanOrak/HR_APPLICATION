@@ -46,7 +46,6 @@ public class UserService {
 
         final String name = userDto.getName();
         final String surname = userDto.getName();
-
         final String userName = userDto.getUserName();
         final String birthDay = userDto.getBirthDay();
         final String birtPlace = userDto.getBirthPlace();

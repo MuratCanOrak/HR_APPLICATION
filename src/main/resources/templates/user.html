@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>HR APPLİCATİON</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
 
@@ -11,120 +12,92 @@
 </head>
 <body>
 
+<div class="container">
+<form th:action="@{/users/create}" th:object="${userDto}" method="post">
+    <div class="form-group">
+        <label>Adı</label>
+        <input type="text" th:field="*{name}" class="form-control">
+    </div>
 
-<form th:action="@{/users}" th:object="${userDto}" method="post">
+    <div class="form-group">
+        <label>Soyadı</label>
+        <input type="text" th:field="*{surname}" class="form-control">
+    </div>
 
-    <table border="1" align="center" cellpadding="3">
-        <tr>
-            <td colspan="2" align="center">
-                <h3>İş Başvuru Formu</h3>
-            </td>
-        </tr>
-        <tr>
-            <td>Adı</td>
+    <div class="form-group">
+        <label >Kullanıcı Adı</label>
+        <input type="text" th:field="*{userName}" class="form-control">
+    </div>
 
-            <td><input type="text" th:field="*{name}"></td>
-        </tr>
+    <div class="form-group">
+        <label>E mail</label>
+        <input type="text" th:field="*{email}" class="form-control">
+    </div>
 
-        <tr>
-            <td>Soyadı</td>
-            <td><input type="text" th:field="*{surname}"></td>
-        </tr>
-
-        <tr>
-            <td>Kullanıcı Adı</td>
-            <td><input type="text"  th:field="*{userName}"></td>
-        </tr>
-
-        <tr>
-            <td>E-mail</td>
-            <td><input type="text" th:field="*{email}" />
-        </tr>
-
-        <tr>
-            <td>Doğum Tarihi</td>
-            <td><input type="datetime-local" th:field="*{birthDay}" />
-        </tr>
-
-        <tr>
-            <td>Doğum Yeri</td>
-            <td><input type="text" th:field="*{birthPlace}" />
-        </tr>
+    <div class="form-group">
+        <label >Doğum Tarihi</label>
+        <td><input type="datetime-local" th:field="*{birthDay}"  class="form-control"/>
+    </div>
 
 
-        <tr>
-            <td>Cinsiyet</td>
-            <td><input type="text" th:field="*{gender}" />
-        </tr>
-
-        <tr>
-            <td>Referanslar</td>
-            <td><input type="text" th:field="*{reference}" />
-        </tr>
+    <div class="form-group">
+        <label >Doğum Yeri</label>
+        <td><input type="text" th:field="*{birthPlace}"  class="form-control"/>
+    </div>
 
 
-        <tr>
-            <td>Alışkanlıklar</td>
-            <td><input type="text" th:field="*{habits}" />
-        </tr>
+    <div class="form-group">
+        <label >Cinsiyet</label>
+        <td><input type="text" th:field="*{gender}"  class="form-control"/>
+    </div>
 
-        <tr>
-            <td>Yabancı Dil</td>
-            <td><input type="text" th:field="*{foreignLanguage}" />
-        </tr>
+    <div class="form-group">
+        <label>Referans</label>
+        <td><input type="text" th:field="*{reference}" class="form-control" />
+    </div>
 
-        <tr>
-            <td>Askerlik</td>
-            <td><input type="text" th:field="*{soldiering}" />
-        </tr>
+    <div class="form-group">
+        <label>Alışkanlıklar</label>
+        <td><input type="text" th:field="*{habits}" class="form-control" />
+    </div>
 
-        <tr>
-            <td>Eğitim</td>
-            <td><input type="text" th:field="*{education}" />
-        </tr>
+    <div class="form-group">
+        <label>Yabancı Dil</label>
+        <td><input type="text" th:field="*{foreignLanguage}" class="form-control" />
+    </div>
 
-        <tr>
-            <td>Geçmiş İşler</td>
-            <td><input type="text" th:field="*{lastJobs}" />
-        </tr>
+    <div class="form-group">
+        <label>Askerlik</label>
+        <td><input type="text" th:field="*{soldiering}" class="form-control" />
+    </div>
 
-        <tr>
-            <td colspan="2" align="center">
-                <input type="submit" value="KAYDET">
-            </td>
-        </tr>
+    <div class="form-group">
+        <label>Eğitim</label>
+        <td><input type="text" th:field="*{education}" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Geçmiş işler</label>
+        <td><input type="text" th:field="*{lastJobs}" class="form-control" />
+    </div>
 
 
-    </table>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<div >
-    <table>
-        <tr th:each="user: ${userDtos}" th:object="${user}"> <br>
-            <td th:text="*{name}"> </td>
-            <td th:text="*{surname}"> </td>
-
-            <td th:text="*{userName}"> </td>
-            <td th:text="*{birthDay}"> </td>
-            <td th:text="*{birthPlace}"> </td>
-            <td th:text="*{reference}"> </td>
-            <td th:text="*{habits}"> </td>
-            <td th:text="*{gender}"> </td>
-            <td th:text="*{foreignLanguage}"> </td>
-            <td th:text="*{soldiering}"> </td>
-            <td th:text="*{education}"> </td>
-            <td th:text="*{lastJobs}"> </td>
-            <td th:text="*{email}"> </td>
-
-
-        </tr>
-
-    </table>
-
 </div>
 
 
+<br/>
+
+
+
+
+
+
 <!--  <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js" integrity=""               -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 
